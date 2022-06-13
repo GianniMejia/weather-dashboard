@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap link  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Weather Dashboard App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Weather Dashboard App</title>
 </head>
+
 <body>
-    <h1>Weather Dashboard</h1>
+  <h1>Weather Dashboard</h1>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-4">
-                <label>Search for a city:</label>
-                <input type="text" id="search-city" /> 
-                <button class="bg-primary" id="search-btn">Search</button>
-                <hr />
-                <ul>
-                    <li> SAVED CITIES FROM SEARCH </li>
-                </ul>
-            </div>
-            <div class="col-8">
-                <div class="container">
-                    <h2 id="city-title">City, State </h2><img id="wicon" alt="Weather icon"/>
-                    <p>Temperature: <span id="currentTemp">0</span></p>
-                    <p>Humidity: <span id="currentHum">0</span></p>
-                    <p>Wind: <span id="currentWind">0</span></p>
-                    <p>UV Index: <span id="currentUV" >0</span></p>
-                </div>
-                <div class="container">
-                    5 Day Forecast  
-                    <div class="card-group">
-                        <div class="card" id="card-One">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Temp</p>
-                            <p class="card-text">Wind</p>
-                            <p class="card-text">Humidity</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                        <div class="card"  id="card-two">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                      </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <label>Search for a city:</label>
+        <input type="text" id="search-city" />
+        <button class="bg-primary" id="search-btn">Search</button>
+        <hr />
+        <h5>SAVED CITIES FROM SEARCH </h5>
+        <ul id="saved-cities-list">
+
+
+        </ul>
+      </div>
+      <div class="col-8">
+        <div class="container">
+          <h2 id="city-title">City, State </h2><img id="wicon" alt="Weather icon" />
+          <p>Temperature: <span id="currentTemp">0</span></p>
+          <p>Humidity: <span id="currentHum">0</span></p>
+          <p>Wind: <span id="currentWind">0</span></p>
+          <p>UV Index: <span id="currentUV">0</span></p>
         </div>
+        <div class="container">
+          <h2>5 Day Forecast</h2>
+          <div class="card-group">
+            <div class="card m-1" id="card-One">
+              <h5 class="card-title " id="card-title-one">date</h5>
+              <img id="wicon-one" alt="Weather icon" />
+              <p class="card-text" id="card-one-temp">Temp</p>
+              <p class="card-text" id="card-one-wind">Wind</p>
+              <p class="card-text" id="card-one-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Two">
+              <h5 class="card-title " id="card-title-two">date</h5>
+              <img id="wicon-two" alt="Weather icon" />
+              <p class="card-text" id="card-two-temp">Temp</p>
+              <p class="card-text" id="card-two-wind">Wind</p>
+              <p class="card-text" id="card-two-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Three">
+              <h5 class="card-title " id="card-title-three">date</h5>
+              <img id="wicon-three" alt="Weather icon" />
+              <p class="card-text" id="card-three-temp">Temp</p>
+              <p class="card-text" id="card-three-wind">Wind</p>
+              <p class="card-text" id="card-three-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Four">
+              <h5 class="card-title " id="card-title-four">date</h5>
+              <img id="wicon-four" alt="Weather icon" />
+              <p class="card-text" id="card-four-temp">Temp</p>
+              <p class="card-text" id="card-four-wind">Wind</p>
+              <p class="card-text" id="card-four-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Five">
+              <h5 class="card-title " id="card-title-five">date</h5>
+              <img id="wicon-five" alt="Weather icon" />
+              <p class="card-text" id="card-five-temp">Temp</p>
+              <p class="card-text" id="card-five-wind">Wind</p>
+              <p class="card-text" id="card-five-hum">Humidity</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
 
 
@@ -87,9 +95,12 @@
 
 
 
-    <!-- Bootstrap  JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- Custom JS script file -->
-    <script src="./assets/script.js"></script>
+  <!-- Bootstrap  JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- Custom JS script file -->
+  <script src="./assets/script.js"></script>
 </body>
+
 </html>
