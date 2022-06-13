@@ -14,9 +14,9 @@ localStorage.setItem('searchedCities', JSON.stringify(searchedCitiesist));
 console.log(searchedCitiesist);
 
 //Weather dashboard function 
-function getLatLonforCity(cityname) {
+function getLatLonforCity(cityname, isHistory) {
     console.log(cityInput.value)
-    if (!cityname) {
+    if (!(isHistory === "y")) {
         city = cityInput.value;
     } else {
         city = cityname
@@ -198,7 +198,7 @@ function loadcityList() {
 function getClickCity(event){
    var cityname = event.target; 
    console.log(cityname.innerHTML);
-   getLatLonforCity(cityname.innerHTML);
+   getLatLonforCity(cityname.innerHTML, "y");
 }
 
 getLatLonforCity("San Jose");
