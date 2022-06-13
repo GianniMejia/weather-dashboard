@@ -173,21 +173,18 @@ function loadcityList() {
     for (var index = 0; index < searchedCitiesist.length; index++) {
 
         console.log(index, "Each element ", searchedCitiesist[index]);
+
         //create a new li tag 
         var newLi = document.createElement("li");
         //display value for the tag
         newLi.textContent = searchedCitiesist[index];
         //apend it to the ul llist on HTML Page 
         document.getElementById("saved-cities-list").append(newLi)
+
     }
 
 
 }
-
-var pastSearch = function (pastSearch){
-    pastSearchEl = document.getElementById
-}
-
 
 loadcityList();
 
