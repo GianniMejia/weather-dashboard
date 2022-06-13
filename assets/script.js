@@ -201,7 +201,7 @@ function getClickCity(event){
    getLatLonforCity(cityname.innerHTML, "y");
 }
 
-getLatLonforCity("San Jose");
+getLatLonforCity("San Jose", "y");
 
 loadcityList();
 
