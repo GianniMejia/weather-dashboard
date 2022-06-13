@@ -3,10 +3,11 @@ console.log("Loading JS ");
 //grab the input field and search button 
 var cityInput = document.getElementById("search-city");
 var searchButton = document.getElementById("search-btn");
-var API_KEY = "0c5e76b9c945a23d74a6a0dc4f4eaa58";
+var API_KEY = "6b141178ee3e3e41639d78c63b5bd5d3"
+//var API_KEY = "0c5e76b9c945a23d74a6a0dc4f4eaa58";
 //get al the saved cities 
 
-var searchedCitiesist = ["San Jose"]; //assign blank array 
+var searchedCitiesist = ["London"]; //assign blank array 
 localStorage.setItem('searchedCities', JSON.stringify(searchedCitiesist));
 
 
@@ -14,6 +15,7 @@ console.log(searchedCitiesist);
 
 //Weather dashboard function 
 function getLatLonforCity(cityname) {
+    console.log(cityInput.value)
     if (!cityname) {
         city = cityInput.value;
     } else {
@@ -198,6 +200,8 @@ function getClickCity(event){
    console.log(cityname.innerHTML);
    getLatLonforCity(cityname.innerHTML);
 }
+
+getLatLonforCity("San Jose");
 
 loadcityList();
 
