@@ -5,19 +5,25 @@ var cityInput = document.getElementById("search-city");
 var searchButton = document.getElementById("search-btn");
 var API_KEY = "0c5e76b9c945a23d74a6a0dc4f4eaa58";
 //get al the saved cities 
-var searchedCitiesist = JSON.parse(localStorage.getItem('searchedCities'));
-if (searchedCitiesist === null) {
-    searchedCitiesist = []; //assign blank array 
-}
+
+var searchedCitiesist = ["San Jose"]; //assign blank array 
+localStorage.setItem('searchedCities', JSON.stringify(searchedCitiesist));
+
+
 console.log(searchedCitiesist);
 
 //Weather dashboard function 
-function getLatLonforCity() {
+function getLatLonforCity(cityname) {
+    if (!cityname) {
+        city = cityInput.value;
+    } else {
+        city = cityname
+    }
     //grabs the value typed inside the search textbox 
-    console.log("city", cityInput.value);
+    console.log("city", city);
 
     //Get Lat and LLon for the city entered 
-    var LatLon_API_URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=1&appid=" + API_KEY;
+    var LatLon_API_URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + API_KEY;
     console.log(LatLon_API_URL);
 
 
@@ -36,7 +42,7 @@ function getLatLonforCity() {
             getWeatherforCity(lat, lon);
 
             //add the serached city to the array list 
-            searchedCitiesist.push(cityInput.value);
+            searchedCitiesist.push(city);
             //save it to localstorage  - key : value 
             console.log("Append the list ", searchedCitiesist)
             localStorage.setItem('searchedCities', JSON.stringify(searchedCitiesist));
@@ -168,6 +174,7 @@ function getWeatherforCity(lat, lon) {
 function loadcityList() {
     //reset the vlauess 
     document.getElementById("saved-cities-list").innerHTML = "";
+    searchedCitiesist = JSON.parse(localStorage.getItem('searchedCities'));
 
     //looping through all the cities within the searched list from local storage 
     for (var index = 0; index < searchedCitiesist.length; index++) {
@@ -175,16 +182,21 @@ function loadcityList() {
         console.log(index, "Each element ", searchedCitiesist[index]);
         //create a new li tag 
         var newLi = document.createElement("li")
-        newLi.addEventListener('click',functionToSeach(cityname))
         //display value for the tag
         newLi.textContent = searchedCitiesist[index];
         //apend it to the ul llist on HTML Page 
         document.getElementById("saved-cities-list").append(newLi)
 
-
+        newLi.addEventListener('click', getClickCity)
     }
 
 
+}
+
+function getClickCity(event){
+   var cityname = event.target; 
+   console.log(cityname.innerHTML);
+   getLatLonforCity(cityname.innerHTML);
 }
 
 loadcityList();
