@@ -194,10 +194,10 @@ function loadcityList() {
 
 }
 
-function getClickCity(event){
-   var cityname = event.target; 
-   console.log(cityname.innerHTML);
-   getLatLonforCity(cityname.innerHTML, "y");
+function getClickCity(event) {
+    var cityname = event.target;
+    console.log(cityname.innerHTML);
+    getLatLonforCity(cityname.innerHTML, "y");
 }
 
 getLatLonforCity("San Jose", "y");
