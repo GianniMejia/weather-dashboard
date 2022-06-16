@@ -89,7 +89,7 @@ function getWeatherforCity(lat, lon) {
             //append weather icon 
             var iconcode = data.current.weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon").setAttribute("src", iconurl);
 
@@ -100,7 +100,7 @@ function getWeatherforCity(lat, lon) {
             document.getElementById("card-one-temp").textContent = "Temp:" + data.daily[0].temp.day;
             var iconcode = data.daily[0].weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon-one").setAttribute("src", iconurl);
             document.getElementById("wicon-one").setAttribute("alt", data.daily[0].weather[0].description);
@@ -115,7 +115,7 @@ function getWeatherforCity(lat, lon) {
             document.getElementById("card-two-temp").textContent = "Temp:" + data.daily[1].temp.day;
             var iconcode = data.daily[1].weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon-two").setAttribute("src", iconurl);
             document.getElementById("wicon-two").setAttribute("alt", data.daily[1].weather[0].description);
@@ -129,7 +129,7 @@ function getWeatherforCity(lat, lon) {
             document.getElementById("card-three-temp").textContent = "Temp:" + data.daily[2].temp.day;
             var iconcode = data.daily[2].weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon-three").setAttribute("src", iconurl);
             document.getElementById("wicon-three").setAttribute("alt", data.daily[2].weather[0].description);
@@ -143,7 +143,7 @@ function getWeatherforCity(lat, lon) {
             document.getElementById("card-four-temp").textContent = "Temp:" + data.daily[3].temp.day;
             var iconcode = data.daily[3].weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon-four").setAttribute("src", iconurl);
             document.getElementById("wicon-four").setAttribute("alt", data.daily[3].weather[0].description);
