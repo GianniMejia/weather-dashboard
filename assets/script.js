@@ -24,7 +24,7 @@ function getLatLonforCity(cityname, isHistory) {
     console.log("city", city);
 
     //Get Lat and LLon for the city entered 
-    var LatLon_API_URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + API_KEY;
+    var LatLon_API_URL = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + API_KEY;
     console.log(LatLon_API_URL);
 
 
