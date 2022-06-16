@@ -158,7 +158,7 @@ function getWeatherforCity(lat, lon) {
             document.getElementById("card-five-temp").textContent = "Temp:" + data.daily[4].temp.day;
             var iconcode = data.daily[4].weather[0].icon;
             // console.log(iconcode);
-            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
             // console.log(iconurl);
             document.getElementById("wicon-five").setAttribute("src", iconurl);
             document.getElementById("wicon-five").setAttribute("alt", data.daily[4].weather[0].description);
